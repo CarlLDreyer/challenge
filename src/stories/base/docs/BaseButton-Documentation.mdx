@@ -1,0 +1,39 @@
+import { Canvas, Story, ArgsTable } from '@storybook/addon-docs'
+
+# Button
+
+Clickable button element that extend the native `button` element with Challenge specific styling.
+The buttons can be customized with several props described below.
+
+## Primary
+
+The primary button has the highest emphasis and should only be used once per screen to draw attention to the highest priority action.
+Multiple primary buttons may confuse the user in understanding what action they should take, not all screens require a primary button.
+
+<Canvas>
+  <Story id="base-button--primary" />
+</Canvas>
+
+## Secondary
+
+Secondary buttons has medium emphasis and should be used for non-critical actions.
+Secondary Buttons can be used on most pages without restrictions and work well for multiple actions of equal weight.
+They can be used together with a Primary Button or independently.
+
+<Canvas>
+  <Story id="base-button--secondary" />
+</Canvas>
+
+## Tertiary
+
+Tertiary buttons has low emphasis and should be used for less important actions.
+
+<Canvas>
+  <Story id="base-button--tertiary" />
+</Canvas>
+
+## Props
+
+The following properties can be used to customize the button, however, the buttons should be implemented according to the style guide above.
+
+<ArgsTable />
