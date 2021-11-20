@@ -1,0 +1,21 @@
+/*------------------------------------*\
+    #MOBILE-WRAPPER
+\*------------------------------------*/
+@use '../settings/' as *;
+
+.mobile-wrapper {
+  display: flex;
+  flex-direction: column;
+  background-color: $color-background;
+  height: 100%;
+  overflow: hidden;
+
+  @media screen and (min-width: 640px) {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    position: relative;
+    max-width: 414px;
+    max-height: 736px;
+  }
+}

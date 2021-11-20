@@ -1,0 +1,61 @@
+@use './settings/button' as *;
+@use 'sass:math';
+
+.base-button {
+  background-color: $button-background;
+  color: $button-color;
+  border-radius: $button-border-radius;
+  cursor: pointer;
+  &__content {
+    display: flex;
+    align-items: center;
+    padding: 0 0 math.div($space-4, 2) 0; // Normalize font
+    .icon-chevron-down {
+      color: inherit;
+      transition: transform 0.15s linear;
+      margin: math.div($space-4, 2) 0 0 5px; // Actually 8px left
+    }
+  }
+  &--active .icon-chevron-down {
+    transform: rotate(180deg);
+  }
+  &:hover,
+  &--active {
+    background-color: $button-background-hovered;
+    color: $button-color-hovered;
+  }
+  &--rounded {
+    border-radius: $button-border-radius-pill;
+  }
+  &--outlined {
+    background-color: $button-background-outlined;
+    border-width: $button-border-width;
+    border-style: $button-border-style;
+    border-color: $button-border-color;
+    color: $button-color-outlined;
+    &:hover,
+    &.base-button--active {
+      background-color: $button-background-outlined-hovered;
+      color: $button-color-outlined-hovered;
+    }
+  }
+  &--inverted {
+    background-color: $button-background-inverted;
+    color: $button-color-inverted;
+    &:hover,
+    &.base-button--active {
+      background-color: $button-background-inverted-hovered;
+      color: $button-color-inverted-hovered;
+    }
+  }
+  &--disabled {
+    background-color: $button-background-disabled;
+    color: $button-color-disabled;
+    cursor: initial;
+    pointer-events: none;
+    &.base-button--outlined {
+      background-color: $button-background-outlined;
+      border-color: $button-border-color-disabled;
+    }
+  }
+}

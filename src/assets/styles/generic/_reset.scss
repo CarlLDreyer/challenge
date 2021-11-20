@@ -1,0 +1,24 @@
+/*---------------------------------------------------*\
+    #RESET - Resets all margins and paddings to 0
+\*---------------------------------------------------*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+blockquote,
+pre,
+form,
+figure {
+    margin: 0;
+    padding: 0;
+}

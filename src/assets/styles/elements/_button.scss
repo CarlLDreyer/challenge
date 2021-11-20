@@ -1,0 +1,23 @@
+/*------------------------------------*\
+    #BUTTON BARE STYLING
+\*------------------------------------*/
+@use '../settings/button' as *;
+
+button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  user-select: none;
+  outline: 0;
+  border: 0;
+  position: relative;
+  text-decoration: none;
+  overflow: visible;
+  height: $button-height;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  line-height: $button-line-height;
+  letter-spacing: $button-letter-spacing;
+  padding: $button-padding;
+}

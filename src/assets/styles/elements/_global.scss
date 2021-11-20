@@ -1,0 +1,45 @@
+/*------------------------------------*\
+    #GLOBAL
+\*------------------------------------*/
+@use '../settings' as *;
+
+html {
+  height: 100%;
+  overscroll-behavior-y: contain; // Check
+}
+
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #000; // change to variable once design is done
+  color: $color-text;
+  font-family: $body-font-family;
+  font-size: $font-size-root;
+  letter-spacing: $letter-spacing-root;
+  line-height: $line-height-root;
+  text-align: left;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+  // overscroll-behavior-y: contain; // Prevents swipe down
+}
+
+#root {
+  height: 100%;
+
+  @media screen and (min-width: 640px) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+}
+
+  // iOS Safari hack to allow click events on body
+@supports (-webkit-touch-callout: none) {
+  body {
+    cursor: pointer;
+  }
+}
