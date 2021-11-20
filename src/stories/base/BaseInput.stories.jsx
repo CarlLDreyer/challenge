@@ -43,3 +43,22 @@ export const withIcon = (args) => {
     </BaseInput>
   )
 }
+
+export const withAlert = (args) => {
+  const [input, setInput] = useState('')
+
+  const handleChange = (e) => {
+    setInput(e.target.value)
+  }
+
+  return (
+    <BaseInput
+      {...args}
+      alert="This is an alert example!"
+      value={input}
+      onChange={handleChange}
+    >
+      <BaseIcon name="search" size="sm" />
+    </BaseInput>
+  )
+}
