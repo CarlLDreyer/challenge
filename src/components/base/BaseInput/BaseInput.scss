@@ -1,0 +1,75 @@
+/*------------------------------------*\
+    #BaseInput
+\*------------------------------------*/
+@use './settings/input' as *;
+@use 'sass:math';
+.base-input-wrapper {
+  display: flex;
+  flex-direction: column;
+  flex: 1 1 auto;
+  max-width: 100%;
+  .base-input {
+    display: flex;
+    align-items: center;
+    flex: 1 1 auto;
+    max-width: 100%;
+    background-color: $input-wrapper-background;
+    padding: $input-wrapper-padding;
+    border-radius: $input-wrapper-border-radius;
+    outline-color: $input-wrapper-outline-color;
+    &__icon {
+      padding: $icon-padding;
+    }
+    &__clear {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      height: $icon-clear-height;
+      width: $icon-clear-width;
+      .icon-clear {
+        color: $icon-clear-color;
+      }
+    }
+    &__alert {
+      display: inherit;
+      align-items: center;
+      justify-content: flex-start;
+      padding: $alert-padding;
+      .icon-alert {
+        margin: $alert-margin;
+        color: $alert-color;
+      }
+      &__msg {
+        color: $alert-color;
+        font-size: $alert-font-size;
+        line-height: $alert-line-height;
+      }
+    }
+    &:focus-within {
+      outline-width: $input-wrapper-border-width-focused;
+      outline-style: $input-wrapper-outline-style;
+    }
+    &--outlined {
+      outline-width: $input-wrapper-outline-width;
+      outline-style: $input-wrapper-outline-style;
+    }
+    &--alerted {
+      outline-width: $input-wrapper-border-width-alerted;
+      outline-style: $input-wrapper-border-style-alerted;
+      outline-color: $input-wrapper-border-color-alerted;
+    }
+    &--disabled {
+      background-color: $input-wrapper-background-disabled;
+      color: $input-wrapper-color-disabled;
+      cursor: initial;
+      input[type=text] {
+        pointer-events: none;
+        user-select: none;
+      }
+      &.base-input--outlined {
+        outline-color: $input-wrapper-border-color-disabled;
+      }
+    }
+  }
+}

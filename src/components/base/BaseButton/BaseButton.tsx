@@ -3,7 +3,7 @@ import './BaseButton.scss'
 import classNames from 'classnames'
 import { BaseIcon } from 'components/base'
 
-interface Props {
+interface ButtonProps {
   name?: string,
   active?: boolean,
   rounded?: boolean,
@@ -11,6 +11,7 @@ interface Props {
   disabled?: boolean,
   inverted?: boolean,
   dropdown?: boolean,
+  text?: boolean,
   children?: any,
   onClick?: MouseEventHandler,
 }
@@ -23,17 +24,19 @@ const BaseButton = ({
   disabled,
   inverted,
   dropdown,
+  text,
   children,
   onClick,
-} : Props) => {
+} : ButtonProps) => {
   const classes = classNames([
     'base-button',
     {
-      [`base-button-${name}`]: name,
+      [`button-${name}`]: name,
       'base-button--active': active,
       'base-button--rounded': rounded,
       'base-button--outlined': outlined,
       'base-button--inverted': inverted,
+      'base-button--text': text,
       'base-button--disabled': disabled,
     },
   ])

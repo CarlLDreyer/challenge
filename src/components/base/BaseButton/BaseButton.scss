@@ -1,3 +1,6 @@
+/*------------------------------------*\
+    #BaseButton
+\*------------------------------------*/
 @use './settings/button' as *;
 @use 'sass:math';
 
@@ -48,6 +51,14 @@
       color: $button-color-inverted-hovered;
     }
   }
+  &--text {
+    background-color: $button-background-text;
+    color: $button-color-text;
+    &:hover,
+    &.base-button--active {
+      background-color: $button-background-color-text-hovered;
+    }
+  }
   &--disabled {
     background-color: $button-background-disabled;
     color: $button-color-disabled;
@@ -56,6 +67,9 @@
     &.base-button--outlined {
       background-color: $button-background-outlined;
       border-color: $button-border-color-disabled;
+    }
+    &.base-button--text {
+      background-color: $button-background-text-disabled;
     }
   }
 }

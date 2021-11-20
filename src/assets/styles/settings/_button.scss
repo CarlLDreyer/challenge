@@ -48,3 +48,13 @@ $button-color-inverted: $color-primary;
 // Inverted / Hovered
 $button-background-inverted-hovered: $color-primary;
 $button-color-inverted-hovered: $white;
+
+// Text
+$button-background-text: transparent;
+$button-color-text: $color-text;
+
+// Text / Hover
+$button-background-color-text-hovered: $gray-50;
+
+// Text / Disabled
+$button-background-text-disabled: transparent;
