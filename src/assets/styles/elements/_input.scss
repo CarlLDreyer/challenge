@@ -3,7 +3,7 @@
 \*------------------------------------*/
 @use '../settings/input' as *;
 
-input[type='text'] {
+input[type=text] {
   font-family: $input-font;
   padding: $input-padding;
   font-size: $input-font-size;
@@ -19,8 +19,8 @@ input[type='text'] {
   }
 }
 
-input[type='radio'],
-input[type='checkbox'] {
+input[type=radio],
+input[type=checkbox] {
   position: absolute;
   top: 0;
   left: 0;
