@@ -1,8 +1,9 @@
 /*------------------------------------*\
-    #BaseButton
+    #BaseButton Styling
 \*------------------------------------*/
-@use './settings/button' as *;
 @use 'sass:math';
+@use './variables' as *;
+@use './settings/variables' as *;
 
 .base-button {
   background-color: $button-background;

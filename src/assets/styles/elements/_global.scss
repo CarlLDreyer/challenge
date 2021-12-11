@@ -1,5 +1,5 @@
 /*------------------------------------*\
-    #GLOBAL
+    #Global
 \*------------------------------------*/
 @use '../settings' as *;
 
@@ -37,7 +37,7 @@ body {
   }
 }
 
-  // iOS Safari hack to allow click events on body
+// iOS Safari hack to allow click events on body
 @supports (-webkit-touch-callout: none) {
   body {
     cursor: pointer;

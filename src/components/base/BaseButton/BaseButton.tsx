@@ -4,16 +4,16 @@ import classNames from 'classnames'
 import { BaseIcon } from 'components/base'
 
 interface ButtonProps {
-  name?: string,
-  active?: boolean,
-  rounded?: boolean,
-  outlined?: boolean,
-  disabled?: boolean,
-  inverted?: boolean,
-  dropdown?: boolean,
-  text?: boolean,
-  children?: any,
-  onClick?: MouseEventHandler,
+  name?: string
+  active?: boolean
+  rounded?: boolean
+  outlined?: boolean
+  disabled?: boolean
+  inverted?: boolean
+  dropdown?: boolean
+  text?: boolean
+  children?: any
+  onClick?: MouseEventHandler
 }
 
 const BaseButton = ({
@@ -27,7 +27,7 @@ const BaseButton = ({
   text,
   children,
   onClick,
-} : ButtonProps) => {
+}: ButtonProps) => {
   const classes = classNames([
     'base-button',
     {
@@ -42,16 +42,11 @@ const BaseButton = ({
   ])
 
   return (
-    <button
-      className={classes}
-      aria-label={name}
-      onClick={onClick}
-    >
+    <button className={classes} aria-label={name} onClick={onClick}>
       <div className="base-button__content">
-        { children }
-        { dropdown && <BaseIcon name="chevron-down" size="xs" /> }
+        {children}
+        {dropdown && <BaseIcon name="chevron-down" size="xs" />}
       </div>
-
     </button>
   )
 }

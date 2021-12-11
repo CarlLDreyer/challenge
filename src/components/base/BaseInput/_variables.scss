@@ -1,0 +1,43 @@
+/*------------------------------------*\
+    #BaseInput Variables
+\*------------------------------------*/
+@use 'sass:math';
+@use './settings/variables' as *;
+@use './settings/colors' as *;
+
+// Wrapper
+$input-wrapper-padding: 0 $space-16;
+$input-wrapper-background: white;
+$input-wrapper-border-radius: 0.25rem; // 4px
+$input-wrapper-outline-color: $color-primary;
+
+// Wrapper / Focused
+$input-wrapper-border-width-focused: 0.125rem; // 2px
+
+// Wrapper / Disabled
+$input-wrapper-background-disabled: $gray-300;
+$input-wrapper-color-disabled: $gray-500;
+
+// Wrapper / Outlined
+$input-wrapper-outline-width: 0.063rem; // 1px
+$input-wrapper-outline-style: solid;
+
+// Wrapper / Outlined / Disabled
+$input-wrapper-border-color-disabled: $gray-500;
+
+// Wrapper / Alerted
+$input-wrapper-border-width-alerted: 0.063rem; // 1px
+$input-wrapper-border-style-alerted: solid;
+$input-wrapper-border-color-alerted: $gray-500;
+
+// Alert
+$alert-padding: 11px $space-10 0 0;
+$alert-color: $gray-600;
+$alert-font-size: $font-size;
+$alert-line-height: 1;
+
+// Alert Icon
+$alert-margin: 0 7px 0 0;
+
+// Prepend Icon
+$icon-padding: 0 $space-12 math.div($space-4, 2) 0;

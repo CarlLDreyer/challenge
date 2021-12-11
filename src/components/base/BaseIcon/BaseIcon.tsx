@@ -3,14 +3,11 @@ import './BaseIcon.scss'
 import classNames from 'classnames'
 
 interface Props {
-  name: string,
-  size?: 'xs' | 'sm' | 'md' | 'lg',
+  name: string
+  size?: 'xs' | 'sm' | 'md' | 'lg'
 }
 
-const BaseIcon = ({
-  name,
-  size = 'md',
-}: Props) => {
+const BaseIcon = ({ name, size = 'md' }: Props) => {
   const loadIcon = require(`components/icons/${size}/${name}`)
   const Icon = loadIcon?.default || loadIcon
 
@@ -19,7 +16,7 @@ const BaseIcon = ({
     `icon-${name}`,
     `base-icon--size-${size}`,
   ])
-  
+
   return (
     <div className={classes}>
       <Icon />

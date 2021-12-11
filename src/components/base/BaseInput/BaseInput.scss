@@ -1,9 +1,11 @@
 /*------------------------------------*\
-    #BaseInput
+    #BaseInput Styling
 \*------------------------------------*/
-@use './settings/input' as *;
 @use 'sass:math';
+@use './variables' as *;
+
 .base-input-wrapper {
+  $root: &;
   display: flex;
   flex-direction: column;
   flex: 1 1 auto;
@@ -19,17 +21,6 @@
     outline-color: $input-wrapper-outline-color;
     &__icon {
       padding: $icon-padding;
-    }
-    &__clear {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      height: $icon-clear-height;
-      width: $icon-clear-width;
-      .icon-clear {
-        color: $icon-clear-color;
-      }
     }
     &__alert {
       display: inherit;
@@ -63,11 +54,11 @@
       background-color: $input-wrapper-background-disabled;
       color: $input-wrapper-color-disabled;
       cursor: initial;
-      input[type=text] {
+      input[type='text'] {
         pointer-events: none;
         user-select: none;
       }
-      &.base-input--outlined {
+      &#{$root}--outlined {
         outline-color: $input-wrapper-border-color-disabled;
       }
     }

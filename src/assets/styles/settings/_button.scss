@@ -1,60 +1,14 @@
 /*------------------------------------*\
-    #BUTTON SETTINGS
+    #Button Bare Variables
 \*------------------------------------*/
 @forward './variables';
 @use './variables' as *;
 @use './colors' as *;
 
-// Default
+// Bare
+$button-height: 2.5rem; // 40px
 $button-font-size: $font-size-s;
 $button-font-weight: $font-weight-semi-bold;
 $button-line-height: 1.25rem; // 20px
 $button-letter-spacing: -0.01rem; // 0.16px
-$button-border-radius: 0.25rem; // 4px
-$button-height: 2.5rem; // 40px
-$button-padding: 0 $space-24; // Might change
-$button-background: $color-primary;
-$button-color: $white;
-
-// Default / Hovered
-$button-background-hovered: $white;
-$button-color-hovered: $color-primary;
-
-// Default / Disabled
-$button-background-disabled: $gray-300;
-$button-color-disabled: $gray-500;
-
-// Rounded
-$button-border-radius-pill: 1.25rem; // 20px
-
-// Outlined
-$button-border-width: 0.125rem; // 2px
-$button-border-style: solid;
-$button-border-color: $color-primary;
-$button-background-outlined: transparent;
-$button-color-outlined: $color-primary;
-
-// Outlined / Hovered
-$button-background-outlined-hovered: $color-primary;
-$button-color-outlined-hovered: $white;
-
-// Outlined / Disabled
-$button-border-color-disabled: $gray-500;
-
-// Inverted
-$button-background-inverted: $white;
-$button-color-inverted: $color-primary;
-
-// Inverted / Hovered
-$button-background-inverted-hovered: $color-primary;
-$button-color-inverted-hovered: $white;
-
-// Text
-$button-background-text: transparent;
-$button-color-text: $color-text;
-
-// Text / Hover
-$button-background-color-text-hovered: $gray-50;
-
-// Text / Disabled
-$button-background-text-disabled: transparent;
+$button-padding: 0 $space-24;

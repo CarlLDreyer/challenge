@@ -4,15 +4,15 @@ import classNames from 'classnames'
 import { BaseIcon } from 'components/base'
 
 interface InputProps {
-  name?: string,
-  type?: string,
-  placeholder?: string,
-  value: string,
-  disabled?: boolean,
-  outlined?: boolean,
-  alert?: string,
-  children?: any,
-  onChange?: any,
+  name?: string
+  type?: string
+  placeholder?: string
+  value: string
+  disabled?: boolean
+  outlined?: boolean
+  alert?: string
+  children?: any
+  onChange?: any
 }
 
 const BaseInput = ({
@@ -25,7 +25,7 @@ const BaseInput = ({
   alert,
   children,
   onChange,
-} : InputProps) => {
+}: InputProps) => {
   const classes = classNames([
     'base-input',
     {
@@ -39,11 +39,7 @@ const BaseInput = ({
   return (
     <div className="base-input-wrapper">
       <div className={classes}>
-        { children &&
-          <div className="base-input__icon">
-            { children }
-          </div>
-        }
+        {children && <div className="base-input__icon">{children}</div>}
         <input
           type={type}
           placeholder={placeholder}
@@ -51,17 +47,14 @@ const BaseInput = ({
           onChange={onChange}
         />
       </div>
-      { alert &&
+      {alert && (
         <div className="base-input__alert">
           <BaseIcon name="alert" />
-          <span className="base-input__alert__msg">
-            { alert }
-          </span>
+          <span className="base-input__alert__msg">{alert}</span>
         </div>
-      }
+      )}
     </div>
   )
-
 }
 
 export default BaseInput

@@ -1,0 +1,50 @@
+/*------------------------------------*\
+    #BaseRadio Styling
+\*------------------------------------*/
+@use './variables' as *;
+@use './settings/colors' as *;
+
+.base-radio {
+  $root: &;
+  padding: $radio-padding;
+  position: relative;
+  &__radio {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: $radio-diameter;
+    width: $radio-diameter;
+    border-width: $radio-border-width;
+    border-style: $radio-border-style;
+    border-color: $radio-border-color;
+    border-radius: $radio-border-radius;
+    transition: $radio-transition;
+  }
+  &__inner {
+    display: block;
+    height: $radio-inner-diamter;
+    width: $radio-inner-diamter;
+    border-radius: $radio-border-radius;
+    transition: $radio-inner-transition;
+    background-color: $radio-inner-background;
+  }
+  &--active {
+    #{$root}__radio {
+      border-color: $radio-border-color-active;
+    }
+    #{$root}__inner {
+      height: $radio-inner-diamter-active;
+      width: $radio-inner-diamter-active;
+      background-color: $radio-inner-background-active;
+    }
+  }
+  &--disabled {
+    pointer-events: none;
+    #{$root}__radio {
+      border-color: $radio-border-color-disabled;
+    }
+    &#{$root}--active #{$root}__inner {
+      background-color: $radio-background-disabled;
+    }
+  }
+}

@@ -1,9 +1,9 @@
 /*------------------------------------*\
-    #INPUT BARE STYLING
+    #Input Bare Styling
 \*------------------------------------*/
 @use '../settings/input' as *;
 
-input[type=text] {
+input[type='text'] {
   font-family: $input-font;
   padding: $input-padding;
   font-size: $input-font-size;
@@ -17,4 +17,16 @@ input[type=text] {
   &:focus {
     outline: 0;
   }
+}
+
+input[type='radio'],
+input[type='checkbox'] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0;
+  height: 100%;
+  width: 100%;
+  user-select: none;
+  cursor: pointer;
 }

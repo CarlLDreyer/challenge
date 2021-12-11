@@ -1,0 +1,29 @@
+/*------------------------------------*\
+    #BaseRadio Variables
+\*------------------------------------*/
+@use './settings/variables' as *;
+@use './settings/colors' as *;
+
+// Default
+$radio-padding: 0.5rem; // 8px
+$radio-diameter: 1.25rem; // 20px
+$radio-border-width: 0.125rem; // 2px
+$radio-border-style: solid;
+$radio-border-color: $gray-500;
+$radio-border-radius: 50%;
+$radio-transition: border-color 0.2s ease;
+
+// Inner
+$radio-inner-diamter: 0.5rem; // 8px
+$radio-inner-background: transparent;
+$radio-inner-transition: background-color 0.2s ease, height 0.2s ease,
+  width 0.2s ease;
+
+// Active
+$radio-border-color-active: $color-primary;
+$radio-inner-background-active: $color-primary;
+$radio-inner-diamter-active: 0.625rem; // 10px
+
+// Disabled
+$radio-background-disabled: $gray-400;
+$radio-border-color-disabled: $gray-400;

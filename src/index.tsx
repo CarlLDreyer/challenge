@@ -1,5 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
+import { Provider } from 'react-redux'
+import { store } from 'util/store'
 import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import 'assets/styles/main.sass'
@@ -7,7 +9,11 @@ import 'assets/styles/main.sass'
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <Provider store={store}>
+      <div className="mobile-wrapper">
+        <App />
+      </div>
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )

@@ -1,9 +1,6 @@
 import React, { useState } from 'react'
 
-import {
-  BaseInput,
-  BaseIcon,
-} from 'components/base'
+import { BaseInput, BaseIcon } from 'components/base'
 
 export default {
   title: 'Base/Input',
@@ -17,13 +14,7 @@ export const Primary = (args) => {
     setInput(e.target.value)
   }
 
-  return (
-    <BaseInput
-      {...args}
-      value={input}
-      onChange={handleChange}
-    />
-  )
+  return <BaseInput {...args} value={input} onChange={handleChange} />
 }
 
 export const withIcon = (args) => {
@@ -34,11 +25,7 @@ export const withIcon = (args) => {
   }
 
   return (
-    <BaseInput
-      {...args}
-      value={input}
-      onChange={handleChange}
-    >
+    <BaseInput {...args} value={input} onChange={handleChange}>
       <BaseIcon name="search" size="sm" />
     </BaseInput>
   )
