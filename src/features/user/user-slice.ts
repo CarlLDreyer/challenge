@@ -1,34 +1,13 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 
+import initialState from 'features/user/initialState'
 import { signOut, GoogleAuthProvider, signInWithPopup } from 'firebase/auth'
 
 import { doc, getDoc, setDoc } from 'firebase/firestore'
 
-import initialState from 'features/user/initialState'
-
 import { auth, db } from 'services/firebase'
 
 const provider = new GoogleAuthProvider()
-
-export const signInWithGoogle = createAsyncThunk<UserState, Payload>(
-  'signInWithGoogle',
-  async (uid, { rejectWithValue }) => {
-    try {
-      if (uid === null) {
-        const res = await signInWithPopup(auth, provider)
-        const dbUser = await checkUserDb(res.user)
-
-        return dbUser as Payload
-      } else {
-        const dbUser = await checkUserDb(uid)
-
-        return dbUser as Payload
-      }
-    } catch (error: any) {
-      return rejectWithValue({ error: error.message })
-    }
-  }
-)
 
 const checkUserDb = async (user: UserState) => {
   const { uid } = user
@@ -55,10 +34,28 @@ const checkUserDb = async (user: UserState) => {
     setDoc(doc(db, 'users', uid), dbUser)
 
     return dbUser
-  } else {
-    return docSnap.data()
   }
+  return docSnap.data()
 }
+
+export const signInWithGoogle = createAsyncThunk<UserState, Payload>(
+  'signInWithGoogle',
+  async (uid, { rejectWithValue }) => {
+    try {
+      if (uid === null) {
+        const res = await signInWithPopup(auth, provider)
+        const dbUser = await checkUserDb(res.user)
+
+        return dbUser as Payload
+      }
+      const dbUser = await checkUserDb(uid)
+
+      return dbUser as Payload
+    } catch (error: any) {
+      return rejectWithValue({ error: error.message })
+    }
+  }
+)
 
 export const logout = createAsyncThunk('logout', (_, { rejectWithValue }) => {
   signOut(auth).catch((error: any) => {

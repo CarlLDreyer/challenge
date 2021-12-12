@@ -6,13 +6,29 @@ import authRoutes from 'router/authRoutes'
 
 const ProtectedRoute = () => (
   <Switch>
-    <Redirect exact from="/" to="/home" />
-    <Redirect exact from="/players" to="/players/all" />
+    <Redirect
+      exact
+      from="/"
+      to="/home"
+    />
+
+    <Redirect
+      exact
+      from="/players"
+      to="/players/all"
+    />
+
     <Suspense fallback={<h2>Loading...</h2>}>
       {authRoutes.map(({ component: Component, path, exact }) => (
-        <Route key={path} path={path} exact={exact}>
+        <Route
+          key={path}
+          path={path}
+          exact={exact}
+        >
           {/* { header && <AppHeader />} */}
+
           <Component />
+
           {/* { nav && <Navigation />} */}
         </Route>
       ))}

@@ -6,24 +6,22 @@ interface Props {
   isAuthenticated?: boolean
 }
 
-const PrivateRoute = ({ children, isAuthenticated, ...rest }: Props) => {
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        isAuthenticated ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: '/sign-in',
-              state: { from: location },
-            }}
-          />
-        )
-      }
-    />
-  )
-}
+const PrivateRoute = ({ children, isAuthenticated, ...rest }: Props) => (
+  <Route
+    {...rest}
+    render={({ location }) =>
+      isAuthenticated ? (
+        children
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/sign-in',
+            state: { from: location },
+          }}
+        />
+      )
+    }
+  />
+)
 
 export default PrivateRoute

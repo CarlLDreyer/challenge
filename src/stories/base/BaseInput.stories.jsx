@@ -14,10 +14,16 @@ export const Primary = (args) => {
     setInput(e.target.value)
   }
 
-  return <BaseInput {...args} value={input} onChange={handleChange} />
+  return (
+    <BaseInput
+      {...args}
+      value={input}
+      onChange={handleChange}
+    />
+  )
 }
 
-export const withIcon = (args) => {
+export const WithIcon = (args) => {
   const [input, setInput] = useState('')
 
   const handleChange = (e) => {
@@ -25,13 +31,20 @@ export const withIcon = (args) => {
   }
 
   return (
-    <BaseInput {...args} value={input} onChange={handleChange}>
-      <BaseIcon name="search" size="sm" />
+    <BaseInput
+      {...args}
+      value={input}
+      onChange={handleChange}
+    >
+      <BaseIcon
+        name="search"
+        size="sm"
+      />
     </BaseInput>
   )
 }
 
-export const withAlert = (args) => {
+export const WithAlert = (args) => {
   const [input, setInput] = useState('')
 
   const handleChange = (e) => {
@@ -45,7 +58,10 @@ export const withAlert = (args) => {
       value={input}
       onChange={handleChange}
     >
-      <BaseIcon name="search" size="sm" />
+      <BaseIcon
+        name="search"
+        size="sm"
+      />
     </BaseInput>
   )
 }

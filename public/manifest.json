@@ -1,6 +1,6 @@
 {
-  "short_name": "Pong",
-  "name": "Pong",
+  "short_name": "Challenge",
+  "name": "Challenge App",
   "icons": [
     {
       "src": "favicon.ico",

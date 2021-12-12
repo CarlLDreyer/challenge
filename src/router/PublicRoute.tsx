@@ -6,24 +6,22 @@ interface Props {
   isAuthenticated?: boolean
 }
 
-const PublicRoute = ({ children, isAuthenticated, ...rest }: Props) => {
-  return (
-    <Route
-      {...rest}
-      render={({ location }) =>
-        !isAuthenticated ? (
-          children
-        ) : (
-          <Redirect
-            to={{
-              pathname: '/home',
-              state: { from: location },
-            }}
-          />
-        )
-      }
-    />
-  )
-}
+const PublicRoute = ({ children, isAuthenticated, ...rest }: Props) => (
+  <Route
+    {...rest}
+    render={({ location }) =>
+      !isAuthenticated ? (
+        children
+      ) : (
+        <Redirect
+          to={{
+            pathname: '/home',
+            state: { from: location },
+          }}
+        />
+      )
+    }
+  />
+)
 
 export default PublicRoute

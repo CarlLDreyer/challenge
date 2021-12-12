@@ -17,15 +17,15 @@ interface ButtonProps {
 }
 
 const BaseButton = ({
-  name,
-  active,
-  rounded,
-  outlined,
-  disabled,
-  inverted,
-  dropdown,
-  text,
-  children,
+  name = '',
+  active = false,
+  rounded = false,
+  outlined = false,
+  disabled = false,
+  inverted = false,
+  dropdown = false,
+  text = false,
+  children = [],
   onClick,
 }: ButtonProps) => {
   const classes = classNames([
@@ -42,10 +42,20 @@ const BaseButton = ({
   ])
 
   return (
-    <button className={classes} aria-label={name} onClick={onClick}>
+    <button
+      className={classes}
+      aria-label={name}
+      onClick={onClick}
+    >
       <div className="base-button__content">
         {children}
-        {dropdown && <BaseIcon name="chevron-down" size="xs" />}
+
+        {dropdown && (
+          <BaseIcon
+            name="chevron-down"
+            size="xs"
+          />
+        )}
       </div>
     </button>
   )

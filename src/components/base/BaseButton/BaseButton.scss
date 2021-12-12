@@ -6,6 +6,7 @@
 @use './settings/variables' as *;
 
 .base-button {
+  $root: &;
   background-color: $button-background;
   color: $button-color;
   border-radius: $button-border-radius;
@@ -38,7 +39,7 @@
     border-color: $button-border-color;
     color: $button-color-outlined;
     &:hover,
-    &.base-button--active {
+    &#{$root}--active {
       background-color: $button-background-outlined-hovered;
       color: $button-color-outlined-hovered;
     }
@@ -47,7 +48,7 @@
     background-color: $button-background-inverted;
     color: $button-color-inverted;
     &:hover,
-    &.base-button--active {
+    &#{$root}--active {
       background-color: $button-background-inverted-hovered;
       color: $button-color-inverted-hovered;
     }
@@ -56,20 +57,20 @@
     background-color: $button-background-text;
     color: $button-color-text;
     &:hover,
-    &.base-button--active {
+    &#{$root}--active {
       background-color: $button-background-color-text-hovered;
     }
   }
   &--disabled {
     background-color: $button-background-disabled;
     color: $button-color-disabled;
-    cursor: initial;
     pointer-events: none;
-    &.base-button--outlined {
+    cursor: initial;
+    &#{$root}--outlined {
       background-color: $button-background-outlined;
       border-color: $button-border-color-disabled;
     }
-    &.base-button--text {
+    &#{$root}--text {
       background-color: $button-background-text-disabled;
     }
   }

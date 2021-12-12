@@ -14,5 +14,12 @@ export const Primary = (args) => {
     setActive(!active)
   }
 
-  return <BaseRadio {...args} id={0} active={active} onClick={handleClick} />
+  return (
+    <BaseRadio
+      {...args}
+      id={0}
+      active={active}
+      onClick={handleClick}
+    />
+  )
 }

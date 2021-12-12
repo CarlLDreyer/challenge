@@ -23,10 +23,14 @@ const BaseRadio = ({ id, name, active, disabled = false, onClick }: Props) => {
   const radioID = `radio-${id || name || 0}`
 
   return (
-    <div className={classes} onClick={onClick}>
+    <div
+      className={classes}
+      onClick={onClick}
+    >
       <div className="base-radio__radio">
         <div className="base-radio__inner" />
       </div>
+
       <input
         id={radioID}
         name={radioID}

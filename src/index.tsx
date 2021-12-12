@@ -1,7 +1,7 @@
+import { store } from 'util/store'
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Provider } from 'react-redux'
-import { store } from 'util/store'
 import App from './App'
 import * as serviceWorkerRegistration from './serviceWorkerRegistration'
 import 'assets/styles/main.sass'

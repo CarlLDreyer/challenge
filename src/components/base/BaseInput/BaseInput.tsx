@@ -40,6 +40,7 @@ const BaseInput = ({
     <div className="base-input-wrapper">
       <div className={classes}>
         {children && <div className="base-input__icon">{children}</div>}
+
         <input
           type={type}
           placeholder={placeholder}
@@ -47,9 +48,11 @@ const BaseInput = ({
           onChange={onChange}
         />
       </div>
+
       {alert && (
         <div className="base-input__alert">
           <BaseIcon name="alert" />
+
           <span className="base-input__alert__msg">{alert}</span>
         </div>
       )}
